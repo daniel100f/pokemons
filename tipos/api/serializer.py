@@ -5,3 +5,4 @@ class TiposSerializers(serializers.ModelSerializer):
     class Meta:
         model=Tipos
         fields='__all__'
+        

@@ -1,4 +1,5 @@
 from django.db import models
+from tipos.models import Tipos
 
 # Create your model pokemons here.
 
@@ -12,8 +13,10 @@ class Pokemons(models.Model):
         ataque=models.IntegerField()
         defensa=models.IntegerField()
         velocidad=models.IntegerField(null=True)
-        altura=models.DecimalField(max_digits=5, decimal_places=2, null=True)
-        peso=models.DecimalField(max_digits=5, decimal_places=2, null=True)
+        altura=models.IntegerField(null=True)
+        peso=models.IntegerField(null=True)
+        #relacion de modelos
+        types = models.ManyToManyField(Tipos, related_name='pokemons')
 
 
 
